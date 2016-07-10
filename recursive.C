@@ -1,15 +1,15 @@
 #include<stdio.h>
 #include<conio.h>
 void add(node* *hd, int v){
-node* curr = *hd;
-if(curr == NULL){
-    curr = (node*)malloc(sizeof(node));
-    curr->value = v;
+node* current = *hd;
+if(current == NULL){
+    current = (node*)malloc(sizeof(node));
+    current->value = v;
 }else{
-    if(v < curr->value){
-        add(&curr->left, v);
+    if(v < current->value){
+        add(&current->left, v);
     }else{
-        add(&curr->right, v);
+        add(&current->right, v);
     }
 }
 getch;
