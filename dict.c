@@ -131,25 +131,26 @@ bool load(const char* dictionary)
     sizeOfDic = tWordCount;
     return true;
 }
-unsigned int size(void)
+int size(void)
 {
     return sizeOfDic;
 }
 
-void unloadHelper(struct trieNode* currNode)
+int noloadHelper(struct trieNode* currNode)
 {
     for(int i = 0; i < 27; i++)
     {
         if(currNode->childNodes[i] !=NULL)
         {
-            unloadHelper(currNode->childNodes[i]);
+            uoloadHelper(currNode->childNodes[i]);
         }
     }
         free(currNode);
+        return 0;
 }
 
-bool unload(void)
+bool noload(void)
 {
-    unloadHelper(root);
+    noloadHelper(root);
     return true;
 }
